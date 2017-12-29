@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ecs.myapplication.R;
 
@@ -43,12 +44,19 @@ public class CustomListViewAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         View rootView=View.inflate(context,R.layout.row,null);
-        String place=placeArray[i];
+        final String place=placeArray[i];
         TextView textView= rootView.findViewById(R.id.textView);
         int imageposition = imgArray[i];
         ImageView imageView = rootView.findViewById(R.id.imageView);
         imageView.setImageResource(imageposition);
         textView.setText(place);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, place+" is clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
         return rootView;
     }
 }

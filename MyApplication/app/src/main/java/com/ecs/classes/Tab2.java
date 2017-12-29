@@ -19,8 +19,8 @@ import com.ecs.myapplication.R;
 public class Tab2 extends Fragment {
 
     private ListView lv_showItem;
-    private String[] foodArray = {"Panner", "Malai Kofta", "Kadhai Panner", "Butter Naan", "Matar Masala"};
-    private int[] imgArray = {R.drawable.fd1, R.drawable.fd2, R.drawable.fd3,R.drawable.fd4,R.drawable.fd5};
+    private String[] placeArray = {"Bengaluru", "Mumbai", "New Delhi", "Chennai", "Pune"};
+    private int[] imgArray = {R.drawable.bg1, R.drawable.bg2, R.drawable.bg3,R.drawable.bg4,R.drawable.bg5};
 
     public Tab2()
     {
@@ -32,8 +32,8 @@ public class Tab2 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View rootview =  inflater.inflate(R.layout.tab2,container,false);
-        lv_showItem = (ListView)rootview.findViewById(R.id.lv_showplaces);
-        CustomListViewAdapter adapter = new CustomListViewAdapter(getActivity(), foodArray,imgArray);
+        lv_showItem = rootview.findViewById(R.id.lv_Places);
+        CustomListViewAdapter adapter = new CustomListViewAdapter(getActivity(), placeArray,imgArray);
         lv_showItem.setAdapter(adapter);
         return rootview;
     }

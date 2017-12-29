@@ -1,5 +1,6 @@
 package com.ecs.classes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -7,9 +8,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.AdapterView;
+import android.widget.GridView;
 
-import com.ecs.adapter.CustomListViewAdapter;
+import com.ecs.adapter.ImageAdapter;
+import com.ecs.myapplication.GenrealItemActivity;
 import com.ecs.myapplication.R;
 
 /**
@@ -17,10 +20,6 @@ import com.ecs.myapplication.R;
  */
 
 public class Tab1 extends Fragment {
-
-    private ListView lv_showItem;
-    private String[] placeArray = {"Bengaluru", "Mumbai", "New Delhi", "Chennai", "Pune"};
-    private int[] imgArray = {R.drawable.bg1, R.drawable.bg2, R.drawable.bg3,R.drawable.bg4,R.drawable.bg5};
 
 
     public Tab1() {
@@ -31,9 +30,48 @@ public class Tab1 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View rootview = inflater.inflate(R.layout.tab1, container, false);
-        lv_showItem = rootview.findViewById(R.id.lv_showItem);
-        CustomListViewAdapter adapter = new CustomListViewAdapter(getActivity(), placeArray,imgArray);
-        lv_showItem.setAdapter(adapter);
+        GridView gridview = (GridView)rootview.findViewById(R.id.gridview);
+        ImageAdapter adapter = new ImageAdapter(getContext());
+        gridview.setAdapter(adapter);
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v,
+                                    int position, long id) {
+               /* Toast.makeText(getContext(), "" + position,
+                        Toast.LENGTH_SHORT).show();*/
+               if(position == 0)
+               {
+                   Intent intent = new Intent(getContext(), GenrealItemActivity.class);
+                   startActivity(intent);
+               }
+                if(position == 1)
+                {
+                    Intent intent = new Intent(getContext(), GenrealItemActivity.class);
+                    startActivity(intent);
+                }
+                if(position == 2)
+                {
+                    Intent intent = new Intent(getContext(), GenrealItemActivity.class);
+                    startActivity(intent);
+                }
+                if(position == 3)
+                {
+                    Intent intent = new Intent(getContext(), GenrealItemActivity.class);
+                    startActivity(intent);
+                }
+                if(position == 4)
+                {
+                    Intent intent = new Intent(getContext(), GenrealItemActivity.class);
+                    startActivity(intent);
+                }
+                if(position == 5)
+                {
+                    Intent intent = new Intent(getContext(), GenrealItemActivity.class);
+                    startActivity(intent);
+                }
+
+            }
+        });
+
         return rootview;
     }
 }

@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <ListView
-        android:id="@+id/tv_showMovieName"
+        android:id="@+id/lv_Food"
         android:layout_width="match_parent"
         android:layout_centerInParent="true"
         android:layout_height="wrap_content"/>
