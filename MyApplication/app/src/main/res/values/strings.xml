@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="category_General">General</string>
+    <string name="category_Places">Places</string>
+    <string name="category_Food">Food</string>
+    <string name="category_Nature">Nature</string>
+</resources>
