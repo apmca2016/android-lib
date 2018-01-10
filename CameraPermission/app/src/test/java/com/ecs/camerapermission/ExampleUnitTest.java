@@ -1,4 +1,4 @@
-package com.ecs.cameraapp;
+package com.ecs.camerapermission;
 
 import org.junit.Test;
 

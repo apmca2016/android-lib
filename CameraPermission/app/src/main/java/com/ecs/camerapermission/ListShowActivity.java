@@ -1,4 +1,4 @@
-package com.ecs.cameraapp;
+package com.ecs.camerapermission;
 
 import android.Manifest;
 import android.content.Intent;
@@ -12,6 +12,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -19,11 +20,13 @@ public class ListShowActivity extends AppCompatActivity {
 
     private static final int OPEN_CAMERA_PERMISSON = 100 ;
     private static final int REQUEST_IMAGE_CAPTURE = 200;
+    private Button btn_Next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_show);
+        btn_Next = (Button)findViewById(R.id.btn_next);
     }
 
 

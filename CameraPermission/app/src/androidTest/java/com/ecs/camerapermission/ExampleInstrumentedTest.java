@@ -1,4 +1,4 @@
-package com.ecs.cameraapp;
+package com.ecs.camerapermission;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
